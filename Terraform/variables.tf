@@ -168,3 +168,8 @@ variable "http_protocol" {
     default = "HTTP"
 }
 
+variable "domain_name" {
+    type = string
+    default = "app.ecs-ismail.com"
+}
+
