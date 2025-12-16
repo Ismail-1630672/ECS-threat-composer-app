@@ -39,4 +39,6 @@ variable "https_protocol" {
     type = string
 }
 
+variable "certificate_arn" {
+}
 

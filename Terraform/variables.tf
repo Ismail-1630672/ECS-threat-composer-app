@@ -173,3 +173,8 @@ variable "domain_name" {
     default = "app.ecs-ismail.com"
 }
 
+variable validation_method {
+    type = string
+    default = "DNS"
+}
+

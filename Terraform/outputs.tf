@@ -49,6 +49,14 @@ output "alb_zone_id" {
     value = module.alb.alb_zone_id
 }
 
+output "zone_id" {
+    value = module.route53.zone_id
+}
+
+output "certificate_arn" {
+    value = module.acm.certificate_arn
+}
+
 
 
 

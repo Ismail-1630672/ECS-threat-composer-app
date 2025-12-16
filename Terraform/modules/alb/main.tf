@@ -32,17 +32,35 @@ resource "aws_lb_target_group" "target_group" {
 }
 
 #creating a listener on port 80 with redirect to port 443 action
-resource "aws_lb_listener" "listener" {
+resource "aws_lb_listener" "http_listener" {
     load_balancer_arn = aws_lb.application_lb.arn 
     port = var.http_port
     protocol = var.http_protocol
 
     default_action {
-      type = "forward"
-      target_group_arn = aws_lb_target_group.target_group.arn
+      type = "redirect"
+      
+      redirect {
+        port = var.https_port
+        protocol = var.https_protocol
+        status_code = "HTTP_301"
+      }
 
       
     }
 
     
+}
+
+#now define a listener on port 443 which forwards to the target group
+resource "aws_lb_listener" "https_listener" {
+  load_balancer_arn = aws_lb.application_lb.arn
+  port = var.https_port
+  protocol = var.https_protocol
+  certificate_arn = var.certificate_arn
+
+  default_action {
+    type = "forward"
+    target_group_arn = aws_lb_target_group.target_group.arn 
+  }
 }

@@ -63,6 +63,7 @@ module "alb" {
     target_type = var.target_type
     https_port = var.https_port
     https_protocol = var.https_protocol
+    certificate_arn = module.acm.certificate_arn
 
 }
 
@@ -72,4 +73,11 @@ module "route53" {
     alb_dns_name = module.alb.alb_dns_name
     alb_zone_id = module.alb.alb_zone_id
 
+}
+
+module "acm" {
+    source = "./modules/acm"
+    zone_id = module.route53.zone_id
+    validation_method = var.validation_method
+    domain_name = var.domain_name
 }
