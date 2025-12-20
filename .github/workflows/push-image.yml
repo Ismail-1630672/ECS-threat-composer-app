@@ -1,0 +1,51 @@
+name: Automating the build and push of docker image to ECR repo
+
+on: 
+    push:
+    workflow_dispatch:
+        inputs:
+            image-build-and-push:
+                description: would you like to build and push your image ?
+                type: string
+
+env:
+  AWS_REGION: eu-west-2
+
+permissions: 
+  id-token: write #required for requesting token
+  contents: read  #required for actions/checkout
+
+                    
+jobs: 
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps: 
+            - name: check out code
+              uses: actions/checkout@v4 
+            
+            - name: configure AWS credentials 
+              uses: aws-actions/configure-aws-credentials@v2
+              with: 
+                role-to-assume: arn:aws:iam::972067303716:role/GitHub-AWS-OIDC
+                role-session-name: Github-AWS-connection
+                aws-region: ${{ env.AWS_REGION }}
+
+            - name: login to amazon ECR
+              id: login-ecr
+              uses: aws-actions/amazon-ecr-login@v1
+            
+            - name: build docker image
+              id: build-docker-image
+              run: |
+                cd app
+                aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 972067303716.dkr.ecr.eu-west-2.amazonaws.com
+                docker build -t my_ecr_repo .
+                docker tag my_ecr_repo:latest 972067303716.dkr.ecr.eu-west-2.amazonaws.com/my_ecr_repo:latest
+            
+            - name: Push docker image to ECR
+              run: |
+                docker push 972067303716.dkr.ecr.eu-west-2.amazonaws.com/my_ecr_repo:latest
+
+                
+
