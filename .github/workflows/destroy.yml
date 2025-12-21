@@ -1,4 +1,4 @@
-name: Terraform init and terraform plan
+name: Terraform destroy
 
 on:
     push:
