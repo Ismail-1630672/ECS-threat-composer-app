@@ -42,4 +42,5 @@ jobs:
               if: ${{ github.event.inputs.terraform-init-plan == 'yes'}}
               run: | 
                 cd Terraform
+                terraform init
                 terraform destroy
