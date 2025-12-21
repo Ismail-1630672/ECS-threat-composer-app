@@ -5,8 +5,9 @@ on:
     workflow_dispatch:
         inputs:
             image-build-and-push:
-                description: would you like to build and push your image ?
+                description: please enter 'yes' to build and push your image ?
                 type: string
+                required: true
 
 env:
   AWS_REGION: eu-west-2
@@ -37,6 +38,7 @@ jobs:
             
             - name: build docker image
               id: build-docker-image
+              if: ${{ github.event.inputs.image-build-and-push == 'yes'}}
               run: |
                 cd app
                 aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 972067303716.dkr.ecr.eu-west-2.amazonaws.com
