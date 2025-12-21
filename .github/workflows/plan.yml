@@ -33,12 +33,13 @@ jobs:
                 aws-region: ${{ env.AWS_REGION }}
 
             - name: set up terraform
-              uses: hashicorp/setup-terraform@v3
+              uses: hashicorp/setup-terraform@v3 
               with:
                 terraform_version: 1.14.1
             
             - name: terraform init, plan
               run: | 
+                cd Terraform
                 terraform init
                 terraform plan
 
