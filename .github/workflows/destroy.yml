@@ -1,0 +1,45 @@
+name: Terraform init and terraform plan
+
+on:
+    push:
+    workflow_dispatch:
+        inputs:
+            terraform-init-plan:
+                description: please enter 'yes' to destroy your infrastructure
+                type: string
+                required: true
+
+
+env:
+    AWS_REGION: eu-west-2
+
+permissions: 
+    id-token: write #for OIDC token
+    contents: read 
+
+
+jobs:
+    plan:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: check out code
+              uses: actions/checkout@v4 
+            
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v2
+              with: 
+                role-to-assume: arn:aws:iam::972067303716:role/GitHub-AWS-OIDC
+                role-session-name: Github-AWS-connection
+                aws-region: ${{ env.AWS_REGION }}
+
+            - name: set up terraform
+              uses: hashicorp/setup-terraform@v3 
+              with:
+                terraform_version: 1.14.1
+            
+            - name: terraform destroy
+              if: ${{ github.event.inputs.terraform-init-plan == 'yes'}}
+              run: | 
+                cd Terraform
+                terraform destroy
