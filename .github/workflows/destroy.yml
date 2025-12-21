@@ -43,6 +43,6 @@ jobs:
               run: | 
                 cd Terraform
                 terraform init
-                terraform force-unlock 788c7272-9dbf-9e39-6d75-9169b6d2683e
+                terraform force-unlock -force 788c7272-9dbf-9e39-6d75-9169b6d2683e
                 terraform plan
                 terraform destroy -auto-approve
