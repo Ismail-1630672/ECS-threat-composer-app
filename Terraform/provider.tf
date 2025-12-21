@@ -12,6 +12,7 @@ terraform {
     region = "eu-west-2"
     encrypt = true
     use_lockfile = true #important for statelocking to prevent corruption of statefile
+    
   }
 }
 

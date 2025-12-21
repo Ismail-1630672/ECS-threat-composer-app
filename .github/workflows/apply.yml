@@ -37,9 +37,10 @@ jobs:
               with:
                 terraform_version: 1.14.1
             
-            - name: terraform init, plan
+            - name: terraform apply
               if: ${{ github.event.inputs.terraform-apply == 'yes'}}
               run: | 
                 cd Terraform
+                terraform init
                 terraform apply -auto-approve
     
