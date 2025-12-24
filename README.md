@@ -71,11 +71,14 @@ Key features:
 
 # Workflow runs
 
-![image alt](https://github.com/Ismail-1630672/ECS-threat-composer-app/blob/main/Screenshot%202025-12-24%20103137.png?raw=true)
+![image alt](https://github.com/Ismail-1630672/ECS-threat-composer-app/blob/main/images/Screenshot%202025-12-24%20103137.png?raw=true)
+
+
 
 
 
   
+
 
 
 
