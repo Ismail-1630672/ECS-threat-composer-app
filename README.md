@@ -12,7 +12,7 @@ Overview:
 
 # Architecture
 
-![image alt](https://github.com/Ismail-1630672/ECS-threat-composer-app/blob/main/ECS.png?raw=true)
+![image alt](https://github.com/Ismail-1630672/ECS-threat-composer-app/blob/main/images/ECS.png?raw=true)
 
 Key features:
 * Route 53 hosted zone to route traffic from custom domain (app.ecs-ismail.com) to application load balancer (ALB).
@@ -76,6 +76,7 @@ Key features:
 
 
   
+
 
 
 
