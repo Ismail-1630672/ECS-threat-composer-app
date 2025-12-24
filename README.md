@@ -59,9 +59,19 @@ Key features:
 * Ran container as non-root user to enhance application security.
 
 # Terraform
+* Used modular Terraform design for AWS resources (VPC,ECS,ALB,ECR,ACM,Route53 etc), improving maintainability and scalability
+* Terraform state (.tfstate) stored in a remote S3 backend enhancing security.
+* Enabled state locking to prevent state file corruption. 
 
 # CI/CD
+* Implemented separate GitHub Actions pipelines for Docker image builds, Terraform planning, and Terraform deployment.
+* Used trigger-based workflows with workflow_dispatch for flexible and controlled deployments.
+* Integrated GitHub Actions with AWS using OIDC, eliminating static AWS credentials.
+* Used short-lived, automatically rotating credentials to follow AWS security best practices.
+
+
   
+
 
 
 
