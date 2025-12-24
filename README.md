@@ -12,6 +12,9 @@ Overview:
 
 # Architecture
 
+![image alt](https://github.com/Ismail-1630672/ECS-threat-composer-app/blob/main/ECS.png?raw=true)
+
+
 
 
 
