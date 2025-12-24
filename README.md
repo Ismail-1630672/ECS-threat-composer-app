@@ -69,8 +69,14 @@ Key features:
 * Integrated GitHub Actions with AWS using OIDC, eliminating static AWS credentials.
 * Used short-lived, automatically rotating credentials to follow AWS security best practices.
 
+# Workflow runs
+
+![image alt]()
+
+
 
   
+
 
 
 
