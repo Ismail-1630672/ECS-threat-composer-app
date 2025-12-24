@@ -10,6 +10,10 @@ Overview:
 * Infrastructure was provisioned using Terraform.
 * Implemented CI/CD pipelines via GitHub actions for automated build and deployment.
 
+# Architecture
+
+
+
 
 
 
