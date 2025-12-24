@@ -23,48 +23,38 @@ Key features:
 
 # Directory structure
 
-.github
-└── workflows
-    ├── apply.yml
-    ├── destroy.yml
-    ├── plan.yml
-    └── push-image.yml
-Terraform
-├── main.tf
-├── modules
-│   ├── acm
-│   │   ├── main.tf
-│   │   ├── outputs.tf
-│   │   └── variables.tf
-│   ├── alb
-│   │   ├── main.tf
-│   │   ├── outputs.tf
-│   │   └── variables.tf
-│   ├── ecr
-│   │   ├── main.tf
-│   │   ├── outputs.tf
-│   │   └── variables.tf
-│   ├── ecs
-│   │   ├── main.tf
-│   │   ├── outputs.tf
-│   │   └── variables.tf
-│   ├── route53
-│   │   ├── main.tf
-│   │   ├── outputs.tf
-│   │   └── variables.tf
-│   ├── security-groups
-│   │   ├── main.tf
-│   │   ├── output.tf
-│   │   └── variables.tf
-│   └── vpc
-│       ├── main.tf
-│       ├── outputs.tf
-│       └── variables.tf
-├── outputs.tf
-├── provider.tf
-└── variables.tf
+```
+└── ./
+    ├── .github/
+    │   └── workflows/
+    │       ├── apply.yml
+    │       ├── destroy.yml
+    │       ├── plan.yml
+    │       └── push-image.yml
+    │
+    ├── app/
+    │   └── Dockerfile
+    │
+    ├── Terraform/
+    │   ├── modules/
+    │   │   ├── acm/
+    │   │   ├── alb/
+    │   │   ├── ecr/
+    │   │   ├── ecs/
+    │   │   ├── route53/
+    │   │   ├── security-groups/
+    │   │   └── vpc/              
+    │   │
+    │   ├── main.tf
+    │   ├── outputs.tf
+    │   ├── provider.tf
+    │   └── variables.tf
+    │
+    └── README.md
+
 
   
+
 
 
 
