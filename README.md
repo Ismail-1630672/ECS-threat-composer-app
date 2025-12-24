@@ -17,7 +17,42 @@ Overview:
 Key features:
 * Route 53 hosted zone to route traffic from custom domain (app.ecs-ismail.com) to application load balancer (ALB).
 * AWS certificate manager (ACM) used to provision an SSL certificate, enabling encrypted HTTPS access to app.ecs-ismail.com.
-* ALB used to route incoming HTTP/HTTPS traffic to ECS tasks across multiple availability zones, improving scalability and availability.
+* ALB used to route and distribute incoming HTTP/HTTPS traffic to multiple ECS tasks.
+* ECS tasks deployed across multiple availability zones for high availability.
+* ECS tasks run behind the ALB to to prevent direct access of containers by users of the internet.
+
+# Directory structure
+
+└── ./
+    ├── .github/
+    │   └── workflows/
+    │       ├── apply.yml
+    │       ├── destroy.yml
+    │       ├── plan.yml
+    │       └── push-image.yml
+    │
+    ├── app/
+    │   └── Dockerfile
+    │
+    ├── Terraform/
+    │   ├── modules/
+    │   │   ├── acm/
+    │   │   ├── alb/
+    │   │   ├── ecr/
+    │   │   ├── ecs/
+    │   │   ├── route53/
+    │   │   ├── security-groups/
+    │   │   └── vpc/              
+    │   │
+    │   ├── main.tf
+    │   ├── outputs.tf
+    │   ├── provider.tf
+    │   └── variables.tf
+    │
+    └── README.md
+
+  
+
 
 
 
