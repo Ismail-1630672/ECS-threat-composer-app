@@ -73,11 +73,16 @@ Key features:
 
 ![image alt](https://github.com/Ismail-1630672/ECS-threat-composer-app/blob/main/images/Screenshot%202025-12-24%20103137.png?raw=true)
 
+# Live application deployment
+
+![image_alt](https://github.com/Ismail-1630672/ECS-threat-composer-app/blob/main/images/Screenshot%202025-12-24%20103836.png?raw=true)
+
 
 
 
 
   
+
 
 
 
