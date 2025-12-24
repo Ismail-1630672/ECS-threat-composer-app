@@ -52,7 +52,17 @@ Key features:
     │
     └── README.md
 ```
+
+# Docker
+* Implemented multi-stage docker builds to produce lightweight and efficient container images.
+* Levereged docker layer caching to speed up rebuilds.
+* Ran container as non-root user to enhance application security.
+
+# Terraform
+
+# CI/CD
   
+
 
 
 
