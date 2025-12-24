@@ -14,6 +14,15 @@ Overview:
 
 ![image alt](https://github.com/Ismail-1630672/ECS-threat-composer-app/blob/main/ECS.png?raw=true)
 
+Key features:
+* Route 53 hosted zone to route traffic from custom domain (app.ecs-ismail.com) to application load balancer (ALB).
+* AWS certificate manager (ACM) used to provision an SSL certificate, enabling encrypted HTTPS access to app.ecs-ismail.com.
+* ALB used to route incoming HTTP/HTTPS traffic to ECS tasks across multiple availability zones, improving scalability and availability.
+
+
+
+
+
 
 
 
