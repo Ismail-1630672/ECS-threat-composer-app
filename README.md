@@ -23,6 +23,7 @@ Key features:
 
 # Directory structure
 
+```
 └── ./
     ├── .github/
     │   └── workflows/
@@ -50,8 +51,38 @@ Key features:
     │   └── variables.tf
     │
     └── README.md
+```
+
+# Docker
+* Implemented multi-stage docker builds to produce lightweight and efficient container images.
+* Levereged docker layer caching to speed up rebuilds.
+* Ran container as non-root user to enhance application security.
+
+# Terraform
+* Used modular Terraform design for AWS resources (VPC,ECS,ALB,ECR,ACM,Route53 etc), improving maintainability and scalability
+* Terraform state (.tfstate) stored in a remote S3 backend enhancing security.
+* Enabled state locking to prevent state file corruption. 
+
+# CI/CD
+* Implemented separate GitHub Actions pipelines for Docker image builds, Terraform planning, and Terraform deployment.
+* Used trigger-based workflows with workflow_dispatch for flexible and controlled deployments.
+* Integrated GitHub Actions with AWS using OIDC, eliminating static AWS credentials.
+* Used short-lived, automatically rotating credentials to follow AWS security best practices.
+
+# Workflow runs
+
+![image alt](https://github.com/Ismail-1630672/ECS-threat-composer-app/blob/main/Screenshot%202025-12-24%20103137.png?raw=true)
+
+
 
   
+
+
+
+
+
+
+
 
 
 
